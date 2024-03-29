@@ -22,16 +22,7 @@ html {
   height: 100vh;
 }
 
-h1,
-h2,
-h3,
-h4,
-p,
-ul,
-ol,
-li,
-blockquote,
-fieldset {
+*, *::before, *::after, input {
   margin: 0;
   padding: 0;
 }
@@ -60,8 +51,8 @@ ol {
 
 .content__list {
   position: relative;
-  max-height: 298px; 
-  overflow-y: scroll;
+  block-size: 298px; 
+  overflow-y: auto;
 }
 
 .content__list-item {
@@ -82,7 +73,7 @@ ol {
 .title {
   color: #FFFFFF;
   font-size: 75px;
-  font-family: Oswald;
+  font-family: Oswald, sans-serif;
   font-weight: 700;
   line-height: 70.5px;
   text-transform: uppercase;
@@ -113,7 +104,7 @@ ol {
 }
 
 .content__video-card-title {
-  font-family: Oswald;
+  font-family: Oswald, sans-serif;
   font-weight: 700;
   font-size: 30px;
   line-height: 30px;
@@ -133,15 +124,15 @@ ol {
   display: block;
   color: #FFFFFF;
   text-decoration: none;
-  margin: 2px;;
+  padding: 2px;
 }
 
 
 .result__video-container {
   position: relative;
-  height: 402px;
+  height: 386px;
   width: 711px;
-  padding-bottom: 16px;
+  margin-bottom: 16px;
 }
 
 .result__video {
@@ -197,9 +188,8 @@ ol {
 } 
 
 .search-form__textfield {
-  inline-size: 100%;
   font-size: 18px;
-  line-height: 21.6px;
+  line-height: 26px;
   font-weight: 400;
   font-family: 'Fira Sans Condensed', sans-serif;
   color: rgba(255, 255, 255, 0.7);
@@ -244,9 +234,9 @@ ol {
 }
 
 input[type='checkbox'] + .search-form__pseudo-checkbox {
-  display: inline-flex; /* Используем flexbox для центрирования внутреннего квадрата */
-  justify-content: center; /* Центрирование содержимого по горизонтали */
-  align-items: center; /* Центрирование содержимого по вертикали */
+  display: inline-flex; 
+  justify-content: center; 
+  align-items: center; 
   border: 1px solid rgba(255, 255, 255, 1);
   inline-size: 19px;
   block-size: 19px;
@@ -275,6 +265,11 @@ input[type='checkbox'] + .search-form__pseudo-checkbox {
   outline: none;
 }
 
+.search-form__label:has(.search-form__checkbox:hover) {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 .search-form__label:has(.search-form__checkbox:focus-visible) {
   outline: 1px solid rgba(255, 255, 255, 1);
   outline-offset: 2px;
@@ -297,6 +292,19 @@ input[type="checkbox"]:checked + .search-form__pseudo-checkbox::after {
 }
 
 .search-form__submit-button:active {
+  background-color: #545050;
+}
+
+.more-button:focus {
+    outline: none;
+}
+
+.more-button:focus-visible {
+    outline: 1px solid rgba(255, 255, 255, 1);
+    outline-offset: 2px;
+}
+
+.more-button:active {
   background-color: #545050;
 }
 
@@ -324,7 +332,7 @@ input[type="checkbox"]:checked + .search-form__pseudo-checkbox::after {
   text-decoration: underline;
 }
 
-.content__video-card-description-container:hover {
+.content__video-card:hover {
   text-decoration: underline;
   text-underline-offset: 3px;
 }
