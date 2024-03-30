@@ -100,7 +100,6 @@ ol {
   display: block;
   flex-grow: 1; 
   padding-bottom: 2px;
-  block-size: 101px;
 }
 
 .content__video-card-title {
